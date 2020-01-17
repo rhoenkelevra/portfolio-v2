@@ -5,19 +5,126 @@
 }
 
 body{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "M PLUS 1p",'Alegreya', 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
     
 }
 
-.projects{
+.main-header{
+    height: 100vh;
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/img/fuji.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+}
+.header__content{
+    text-align: center;
+    color: rgb(199, 196, 196);
+}
+
+.header__title{
+    
+    display: block;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+.header__subtitle{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.btn__contact{
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    border: #fff 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.btn__contact:hover{
+    background-color:rgba(88, 200, 248, 0.406);
+    font-style: italic;
+}
+nav{
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom: 1px #eee solid;
+}
+
+nav::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+
+.navbar .logo{
+    height: 60px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.navbar__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+.nav__item{
+    /* list-style-type: none; */
+    display: inline-block;
+    margin: 0 20px;
+    padding: 20px;
+}
+
+.nav__item a{
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Alegreya', 'Montserrat', sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+.nav__item a:hover{
+    background-color: #333;
+    color: #fff;
+    font-style: italic;
+}
+
+#btn--cta{
+    background-color: rgba(88, 200, 248, 0.406);
+    
+}
+
+
+
+
+
+
+
+.projects__container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
-    margin-top: 900px;
     height: 100vh;
+    padding: 20px;
 }
 
-.projects .project-card{
+.projects__container .project-card{
     position: relative;
     width: 300px;
     height: 400px;
@@ -26,7 +133,7 @@ body{
     box-shadow: 0 15px 60px rgba(0,0,0, .5);
 }
 
-.projects .project-card .face{
+.projects__container .project-card .face{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -37,30 +144,26 @@ body{
     align-items: center;
 }
 
-.projects .project-card .face1{
+.projects__container .project-card .face1{
     padding: 20px;
 }
 
-.projects .project-card .face1 h2{
+.projects__container .project-card .face1 h2{
     margin: 0;
     padding: 0;
 }
 
-.projects .project-card .face.face2{
-    /* background-image: url('/img/accordion_menu.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
+.projects__container .project-card .face.face2{
     transition: 1.5s;
 }
 
-.projects .project-card:nth-child(1) .face.face2{
+.projects__container .project-card:nth-child(1) .face.face2{
     background: #333 url('/img/task_list.png') center center/ contain no-repeat;
 }
-.projects .project-card:nth-child(2) .face.face2{
+.projects__container .project-card:nth-child(2) .face.face2{
     background: #333 url('/img/pig_game.png') center center/ contain no-repeat;
 }
-.projects .project-card:nth-child(3) .face.face2{
+.projects__container .project-card:nth-child(3) .face.face2{
     background: #333 url('/img/calculator.png') center center/ cover no-repeat;
 }
 
@@ -74,17 +177,23 @@ body{
     background: rgba(255, 255, 255, .1);
 } */
 
-.projects .project-card:hover .face.face2{
+.projects__container .project-card:hover .face.face2{
     height: 60px;
     background: #fff;
 }
 
-.projects .project-card .face.face2 h2{
+.projects__container .project-card .face.face2 h2{
     display: none;
 }
-.projects .project-card:hover .face.face2 h2{
+.projects__container .project-card:hover .face.face2 h2{
     display: inline;
     font-size: 2em;
     color: #111;
 }
 
+
+@media(max-width: 568px){
+    .main-header{
+        background-attachment: scroll;
+    }
+}
